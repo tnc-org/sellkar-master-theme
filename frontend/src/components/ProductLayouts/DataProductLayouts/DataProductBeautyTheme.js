@@ -1,0 +1,200 @@
+export const DataProductBeautyTheme = [
+  {
+    id: 1,
+    name: "Hydrating Face Cream - Rose Infusion",
+    category: "latest",
+    image: "/ThemeBeauty/cream1.png",
+    price: 145,
+    comparePrice: 180,
+    rating: 4.7,
+    bestseller: true,
+    description: "Luxurious rose-infused face cream that deeply hydrates and nourishes your skin.\nEnriched with natural rose extracts for a radiant glow.\nLightweight formula absorbs quickly without leaving residue.\nSuitable for all skin types including sensitive skin.\nProvides 24-hour moisture protection.\nDermatologically tested and cruelty-free."
+  },
+  {
+    id: 2,
+    name: "Nourishing Night Cream",
+    category: "featured",
+    image: "/ThemeBeauty/cream2.png",
+    price: 165,
+    comparePrice: 210,
+    rating: 4.8,
+    bestseller: true,
+    description: "Advanced night cream formulated to repair and rejuvenate skin overnight.\nContains powerful antioxidants and vitamins.\nReduces fine lines and wrinkles while you sleep.\nRestores skin's natural elasticity and firmness.\nNon-comedogenic and paraben-free.\nWake up to softer, smoother, more youthful-looking skin."
+  },
+  {
+    id: 3,
+    name: "Vitamin C Brightening Cream",
+    category: "latest",
+    image: "/ThemeBeauty/cream3.png",
+    price: 155,
+    comparePrice: 195,
+    rating: 4.6,
+    bestseller: false,
+    description: "Powerful brightening cream with concentrated Vitamin C.\nEvens out skin tone and reduces dark spots.\nBoosts collagen production for firmer skin.\nProtects against environmental damage.\nLightweight, non-greasy formula perfect for daily use.\nVisible results in just 2-3 weeks of consistent use."
+  },
+  {
+    id: 4,
+    name: "Anti-Aging Retinol Cream",
+    category: "featured",
+    image: "/ThemeBeauty/cream4.png",
+    price: 185,
+    comparePrice: 240,
+    rating: 4.9,
+    bestseller: true,
+    description: "Premium retinol cream that targets signs of aging effectively.\nReduces wrinkles, fine lines, and age spots.\nImproves skin texture and tone.\nStimulates cell turnover for fresher-looking skin.\nGentle formula suitable for nightly use.\nClinically proven results backed by dermatologists."
+  },
+  {
+    id: 5,
+    name: "Daily Moisturizing Cream SPF 30",
+    category: "latest",
+    image: "/ThemeBeauty/cream5.png",
+    price: 135,
+    comparePrice: 170,
+    rating: 4.5,
+    bestseller: false,
+    description: "All-in-one moisturizer with broad-spectrum SPF 30 protection.\nHydrates skin while protecting from harmful UV rays.\nPerfect for daily use as your morning skincare routine.\nNon-whitening formula that blends seamlessly.\nContains antioxidants to fight free radicals.\nIdeal base for makeup application."
+  },
+  {
+    id: 6,
+    name: "Sensitive Skin Calming Cream",
+    category: "featured",
+    image: "/ThemeBeauty/cream6.png",
+    price: 150,
+    comparePrice: 190,
+    rating: 4.8,
+    bestseller: false,
+    description: "Specially formulated for sensitive and reactive skin.\nSoothes irritation and reduces redness instantly.\nFragrance-free and hypoallergenic formula.\nStrengthens skin's natural barrier.\nGentle enough for daily use on even the most delicate skin.\nDermatologist-recommended for eczema-prone skin."
+  },
+  {
+    id: 7,
+    name: "Matte Velvet Lipstick - Ruby Red",
+    category: "latest",
+    image: "/ThemeBeauty/lipstick1.png",
+    price: 125,
+    comparePrice: 160,
+    rating: 4.6,
+    bestseller: true,
+    description: "Long-lasting matte lipstick with intense color payoff.\nVelvety smooth texture glides on effortlessly.\nStays put for up to 8 hours without feathering.\nInfused with nourishing oils to prevent dryness.\nHighly pigmented formula requires just one swipe.\nAvailable in a stunning ruby red shade."
+  },
+  {
+    id: 8,
+    name: "Satin Finish Lipstick - Coral Bliss",
+    category: "featured",
+    image: "/ThemeBeauty/lipstick2.png",
+    price: 118,
+    comparePrice: 150,
+    rating: 4.7,
+    bestseller: true,
+    description: "Luxurious satin lipstick with a perfect balance of color and shine.\nEnriched with vitamin E and shea butter.\nProvides comfortable wear throughout the day.\nBeautiful coral shade perfect for any occasion.\nSmooth application with no tugging or pulling.\nLeaves lips feeling soft and hydrated."
+  },
+  {
+    id: 9,
+    name: "Glossy Lipstick - Pink Champagne",
+    category: "latest",
+    image: "/ThemeBeauty/lipstick3.png",
+    price: 130,
+    comparePrice: 165,
+    rating: 4.5,
+    bestseller: false,
+    description: "High-shine glossy lipstick with stunning color and dimension.\nReflective finish adds fullness to lips.\nContains hyaluronic acid for plumping effect.\nLong-wearing formula that doesn't feel sticky.\nPerfect pink champagne shade for elegant looks.\nParaben-free and cruelty-free formulation."
+  },
+  {
+    id: 10,
+    name: "Liquid Matte Lipstick - Berry Bold",
+    category: "featured",
+    image: "/ThemeBeauty/lipstick4.png",
+    price: 140,
+    comparePrice: 175,
+    rating: 4.8,
+    bestseller: true,
+    description: "Ultra-matte liquid lipstick with unbeatable staying power.\nTransfer-proof formula lasts through meals and drinks.\nLightweight feel that doesn't cake or crack.\nPrecision applicator for perfect definition.\nBold berry shade makes a statement.\nRemoves easily with makeup remover."
+  },
+  {
+    id: 11,
+    name: "Moisturizing Lipstick - Nude Rose",
+    category: "latest",
+    image: "/ThemeBeauty/lipstick5.png",
+    price: 115,
+    comparePrice: 145,
+    rating: 4.6,
+    bestseller: false,
+    description: "Creamy moisturizing lipstick for everyday wear.\nHydrating formula enriched with natural oils.\nPerfect nude rose shade complements all skin tones.\nBuilds from sheer to full coverage.\nSmooth, even application every time.\nKeeps lips conditioned and comfortable all day."
+  },
+  {
+    id: 12,
+    name: "Illuminating Setting Powder - Translucent",
+    category: "latest",
+    image: "/ThemeBeauty/powder1.png",
+    price: 142,
+    comparePrice: 180,
+    rating: 4.7,
+    bestseller: true,
+    description: "Finely-milled translucent powder for a flawless finish.\nSets makeup in place for all-day wear.\nBlurs imperfections and minimizes pores.\nSubtle luminous finish without looking cakey.\nSuitable for all skin tones and types.\nControls shine while maintaining natural radiance."
+  },
+  {
+    id: 13,
+    name: "Mineral Powder Foundation - Medium",
+    category: "featured",
+    image: "/ThemeBeauty/powder2.png",
+    price: 158,
+    comparePrice: 200,
+    rating: 4.8,
+    bestseller: true,
+    description: "Buildable mineral powder foundation for natural coverage.\n100% pure minerals for healthy skin.\nProvides SPF 15 natural sun protection.\nLightweight formula feels like you're wearing nothing.\nPerfect for sensitive and acne-prone skin.\nBuff on for a beautiful, airbrushed finish."
+  },
+  {
+    id: 14,
+    name: "Bronzing Powder - Sun-Kissed Glow",
+    category: "latest",
+    image: "/ThemeBeauty/powder3.png",
+    price: 148,
+    comparePrice: 185,
+    rating: 4.6,
+    bestseller: false,
+    description: "Silky bronzing powder for a natural sun-kissed look.\nWarm, buildable color for sculpting and contouring.\nFinely milled for smooth, even application.\nLong-lasting formula resists fading.\nAdds warmth and dimension to your complexion.\nSuitable for fair to medium skin tones."
+  },
+  {
+    id: 15,
+    name: "Finishing Powder - Porcelain",
+    category: "featured",
+    image: "/ThemeBeauty/powder4.png",
+    price: 152,
+    comparePrice: 190,
+    rating: 4.9,
+    bestseller: true,
+    description: "Professional finishing powder for a perfected complexion.\nSoft-focus technology blurs fine lines and wrinkles.\nOil-absorbing formula keeps skin matte.\nInvisible on skin, doesn't alter makeup color.\nPhotograph beautifully without flashback.\nDermatologist-tested and non-comedogenic."
+  },
+  {
+    id: 16,
+    name: "Hyaluronic Acid Face Serum",
+    category: "latest",
+    image: "/ThemeBeauty/serum1.png",
+    price: 175,
+    comparePrice: 220,
+    rating: 4.9,
+    bestseller: true,
+    description: "Intensive hydrating serum with pure hyaluronic acid.\nPlumps skin and reduces appearance of fine lines.\nLightweight, fast-absorbing formula.\nBoosts skin's moisture retention capacity.\nLayers beautifully under moisturizer and makeup.\nVisible improvement in skin texture within days."
+  },
+  {
+    id: 17,
+    name: "Vitamin C Brightening Serum",
+    category: "featured",
+    image: "/ThemeBeauty/serum2.png",
+    price: 188,
+    comparePrice: 235,
+    rating: 4.8,
+    bestseller: true,
+    description: "Potent vitamin C serum for radiant, even-toned skin.\nFades dark spots and hyperpigmentation.\nBoosts collagen production and skin firmness.\nProtects against environmental stressors.\nStabilized formula ensures maximum potency.\nSuitable for all skin types including sensitive."
+  },
+  {
+    id: 18,
+    name: "Niacinamide Pore Refining Serum",
+    category: "latest",
+    image: "/ThemeBeauty/serum3.png",
+    price: 168,
+    comparePrice: 210,
+    rating: 4.7,
+    bestseller: false,
+    description: "Advanced niacinamide serum for refined, clear skin.\nMinimizes enlarged pores and controls oil production.\nReduces blemishes and prevents breakouts.\nStrengthens skin barrier function.\nImproves overall skin texture and tone.\nGentle enough for daily use morning and night."
+  }
+];

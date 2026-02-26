@@ -1,0 +1,145 @@
+export const DataProductFurnitureTheme = [
+  {
+    id: 1,
+    name: "Modern Lamp",
+    category: "latest",
+    image: "/ThemePictures/lamp1.jpeg",
+    price: 120,
+    comparePrice: 150,
+    rating: 4.5,
+    bestseller: true,
+    description: "A sleek modern lamp designed to elevate any interior space.\nPerfect for bedrooms, living rooms, or minimalist decor.\nMade from high-quality materials ensuring durability.\nAdds a warm and cozy ambiance to your home.\nEasy to clean and maintain for long-term use.\nComplements a variety of interior styles seamlessly."
+  },
+  {
+    id: 2,
+    name: "Stylish Lamp",
+    category: "featured",
+    image: "/ThemePictures/lamp1.jpeg",
+    price: 80,
+    comparePrice: 100,
+    rating: 3.8,
+    bestseller: false,
+    description: "A stylish lamp with a clean and elegant finish.\nAdds charm and warm lighting to your space.\nCompact size fits perfectly on desks or side tables.\nEnhances the aesthetic appeal of any room.\nLightweight and easy to move around.\nPerfect gift choice for friends or family."
+  },
+  {
+    id: 3,
+    name: "Mirror",
+    category: "topRated",
+    image: "/ThemePictures/table2.jpeg",
+    price: 200,
+    comparePrice: 250,
+    rating: 3.9,
+    bestseller: true,
+    description: "A modern decorative mirror with a premium look.\nReflects light and enhances space in any room.\nDesigned to complement contemporary interiors.\nPerfect for bedrooms, living areas, or hallways.\nDurable frame ensures long-lasting use.\nAdds elegance and brightness to your home decor."
+  },
+  {
+    id: 5,
+    name: "Elegant Cup",
+    category: "latest",
+    image: "/ThemePictures/cup1.jpeg",
+    price: 900,
+    comparePrice: 350,
+    rating: 4.7,
+    bestseller: false,
+    description: "An elegant cup crafted with a refined design.\nIdeal for serving beverages in style.\nMade with durable, high-quality materials.\nAdds sophistication to your dining experience.\nPerfect for formal gatherings or casual drinks.\nEasy to clean and dishwasher safe."
+  },
+  {
+    id: 6,
+    name: "Elegant Cup",
+    category: "latest",
+    image: "/ThemePictures/lamp2.jpeg",
+    price: 600,
+    comparePrice: 350,
+    rating: 2.6,
+    bestseller: false,
+    description: "A decorative and elegant cup for daily use.\nCombines beauty with practical design.\nPerfect for morning coffee or evening tea.\nEnhances the look of your kitchen or dining table.\nLightweight and easy to handle.\nIdeal for gifting or personal use."
+  },
+  {
+    id: 7,
+    name: "Elegant Desk",
+    category: "latest",
+    image: "/ThemePictures/Desk.jpeg",
+    price: 400,
+    comparePrice: 350,
+    rating: 4.3,
+    bestseller: false,
+    description: "A modern desk designed for comfort and productivity.\nIdeal for home offices or study spaces.\nSpacious surface accommodates computers and accessories.\nBuilt with sturdy materials for long-lasting use.\nSleek design fits perfectly in any room.\nEasy to assemble and maintain."
+  },
+  {
+    id: 8,
+    name: "Table",
+    category: "latest",
+    image: "/ThemePictures/table2.jpeg",
+    price: 900,
+    comparePrice: 350,
+    rating: 4.1,
+    bestseller: false,
+    description: "A sturdy and stylish table with a modern finish.\nPerfect for dining or decorative purposes.\nEnhances any interior with its sleek design.\nDurable, easy to clean, and built for everyday use.\nIdeal for family meals or gatherings.\nBlends seamlessly with various decor themes."
+  },
+  {
+    id: 9,
+    name: "Lamp",
+    category: "latest",
+    image: "/ThemePictures/lamp2.jpeg",
+    price: 400,
+    comparePrice: 350,
+    rating: 3.7,
+    bestseller: false,
+    description: "A functional lamp providing soft and warm lighting.\nIdeal for relaxing and ambient environments.\nCompact design fits perfectly anywhere in your home.\nEnergy-efficient LED ensures long-lasting illumination.\nSafe and environmentally friendly materials.\nAdds a touch of style to any room."
+  },
+  {
+    id: 10,
+    name: "Table",
+    category: "latest",
+    image: "/ThemePictures/table4.jpeg",
+    price: 700,
+    comparePrice: 350,
+    rating: 3.4,
+    bestseller: false,
+    description: "A contemporary table with a clean and modern design.\nBlends seamlessly with any interior decor.\nPerfect for dining rooms or living areas.\nCrafted for durability and long-term everyday use.\nEasy to clean and maintain.\nAdds sophistication to your home interior."
+  },
+  {
+    id: 11,
+    name: "Elegant Cup",
+    category: "latest",
+    image: "/ThemePictures/lamp1.jpeg",
+    price: 800,
+    comparePrice: 350,
+    rating: 4.2,
+    bestseller: false,
+    description: "A premium elegant cup with a stylish appearance.\nPerfect for everyday use or special occasions.\nMade from high-quality, long-lasting materials.\nAdds elegance and charm to any table setting.\nLightweight and convenient for daily use.\nMakes a perfect gift for friends and family."
+  },
+  {
+    id: 12,
+    name: "Lamp",
+    category: "latest",
+    image: "/ThemePictures/lamp2.jpeg",
+    price: 400,
+    comparePrice: 350,
+    rating: 3.7,
+    bestseller: false,
+    description: "A functional lamp providing soft and warm lighting.\nIdeal for relaxing and ambient environments.\nCompact design fits perfectly anywhere in your home.\nEnergy-efficient LED ensures long-lasting illumination.\nSafe and environmentally friendly materials.\nAdds a touch of style to any room."
+  },
+  {
+    id: 13,
+    name: "Table",
+    category: "latest",
+    image: "/ThemePictures/table4.jpeg",
+    price: 700,
+    comparePrice: 350,
+    rating: 3.4,
+    bestseller: false,
+    description: "A contemporary table with a clean and modern design.\nBlends seamlessly with any interior decor.\nPerfect for dining rooms or living areas.\nCrafted for durability and long-term everyday use.\nEasy to clean and maintain.\nAdds sophistication to your home interior."
+  },
+  {
+    id: 14,
+    name: "Elegant Cup",
+    category: "latest",
+    image: "/ThemePictures/lamp1.jpeg",
+    price: 800,
+    comparePrice: 350,
+    rating: 4.2,
+    bestseller: false,
+    description: "A premium elegant cup with a stylish appearance.\nPerfect for everyday use or special occasions.\nMade from high-quality, long-lasting materials.\nAdds elegance and charm to any table setting.\nLightweight and convenient for daily use.\nMakes a perfect gift for friends and family."
+  },
+];
