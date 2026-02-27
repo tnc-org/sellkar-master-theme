@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 import AppLayout from "@/components/AppLayout";
@@ -42,9 +43,11 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <body>
-        <ClientWrapper>
-          <AppLayout backendTheme={defaultTheme}>{children}</AppLayout>
-        </ClientWrapper>
+        <Suspense fallback={null}>
+          <ClientWrapper>
+            <AppLayout backendTheme={defaultTheme}>{children}</AppLayout>
+          </ClientWrapper>
+        </Suspense>
       </body>
     </html>
   );
