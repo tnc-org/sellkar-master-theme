@@ -1,0 +1,145 @@
+export const DataProductModestWearTheme = [
+  {
+    id: 1,
+    name: "Classic Cotton Button-Down Shirt",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear1.png",
+    price: 4200,
+    comparePrice: 5200,
+    rating: 4.7,
+    bestseller: true,   
+    description: "Premium breathable cotton fabric.\nComfortable relaxed fit.\nFull-length sleeves for modest coverage.\nPerfect for office or casual wear.\nTimeless and elegant design."
+  },
+  {
+    id: 2,
+    name: "Elegant Longline Tunic Top",
+    category: "featured",
+    image: "/ThemeModestWear/modestWear2.png",
+    price: 3600,
+    comparePrice: 4500,
+    rating: 4.6,
+    bestseller: true,
+    description: "Soft lightweight fabric.\nExtended length for modest styling.\nLoose and flowy silhouette.\nComfortable for daily wear.\nChic and modern look."
+  },
+  {
+    id: 3,
+    name: "Premium Denim Shirt",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear3.png",
+    price: 5200,
+    comparePrice: 6500,
+    rating: 4.8,
+    bestseller: true,
+    description: "High-quality denim material.\nClassic collar design.\nButton-front closure.\nPerfect for layering outfits.\nDurable and stylish essential."
+  },
+  {
+    id: 4,
+    name: "Formal Silk Blouse",
+    category: "featured",
+    image: "/ThemeModestWear/modestWear4.png",
+    price: 4800,
+    comparePrice: 6200,
+    rating: 4.5,
+    bestseller: false,
+    description: "Smooth premium silk fabric.\nElegant tailored fit.\nLong sleeves with cuff detail.\nPerfect for formal occasions.\nSophisticated wardrobe staple."
+  },
+  {
+    id: 5,
+    name: "Casual Printed T-Shirt",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear5.png",
+    price: 1600,
+    comparePrice: 2200,
+    rating: 4.4,
+    bestseller: false,
+    description: "Soft breathable cotton.\nModern minimalist print.\nComfortable everyday fit.\nEasy to pair with jeans or skirts.\nLightweight and durable fabric."
+  },
+  {
+    id: 6,
+    name: "Athletic Performance T-Shirt",
+    category: "featured",
+    image: "/ThemeModestWear/modestWear6.png",
+    price: 6900,
+    comparePrice: 8500,
+    rating: 4.9,
+    bestseller: true,
+    description: "Moisture-wicking fabric.\nBreathable and stretchable material.\nDesigned for active movement.\nComfortable relaxed fit.\nPerfect for workouts and casual wear."
+  },
+  {
+    id: 7,
+    name: "Oversized Modest Hoodie",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear7.png",
+    price: 2300,
+    comparePrice: 3000,
+    rating: 4.3,
+    bestseller: false,
+    description: "Soft fleece inner lining.\nLoose oversized fit.\nFull sleeve coverage.\nWarm and comfortable feel.\nIdeal for casual and winter wear."
+  },
+  {
+    id: 8,
+    name: "Classic Polo Shirt",
+    category: "featured",
+    image: "/ThemeModestWear/modestWear8.png",
+    price: 1900,
+    comparePrice: 2600,
+    rating: 4.5,
+    bestseller: false,
+    description: "Premium pique cotton fabric.\nStructured collar design.\nComfortable regular fit.\nSuitable for smart-casual styling.\nDurable and breathable material."
+  },
+  {
+    id: 9,
+    name: "Long Modest Maxi Dress",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear9.png",
+    price: 8800,
+    comparePrice: 10500,
+    rating: 4.8,
+    bestseller: true,
+    description: "Full-length elegant design.\nFlowy breathable fabric.\nLong sleeves for modest coverage.\nPerfect for special occasions.\nComfort-focused stitching."
+  },
+  {
+    id: 10,
+    name: "Elegant Longline Tunic Top",
+    category: "featured",
+    image: "/ThemeModestWear/modestWear2.png",
+    price: 3600,
+    comparePrice: 4500,
+    rating: 4.6,
+    bestseller: true,
+    description: "Soft lightweight fabric.\nExtended length for modest styling.\nLoose and flowy silhouette.\nComfortable for daily wear.\nChic and modern look."
+  },
+   {
+    id: 11,
+    name: "Oversized Modest Hoodie",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear7.png",
+    price: 2300,
+    comparePrice: 3000,
+    rating: 4.3,
+    bestseller: false,
+    description: "Soft fleece inner lining.\nLoose oversized fit.\nFull sleeve coverage.\nWarm and comfortable feel.\nIdeal for casual and winter wear."
+  },
+  {
+    id: 12,
+    name: "Formal Silk Blouse",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear4.png",
+    price: 4800,
+    comparePrice: 6200,
+    rating: 4.5,
+    bestseller: false,
+    description: "Smooth premium silk fabric.\nElegant tailored fit.\nLong sleeves with cuff detail.\nPerfect for formal occasions.\nSophisticated wardrobe staple."
+  },
+  {
+    id: 13,
+    name: "Formal Silk Blouse",
+    category: "latest",
+    image: "/ThemeModestWear/modestWear2.png",
+    price: 4800,
+    comparePrice: 6200,
+    rating: 4.5,
+    bestseller: false,
+    description: "Smooth premium silk fabric.\nElegant tailored fit.\nLong sleeves with cuff detail.\nPerfect for formal occasions.\nSophisticated wardrobe staple."
+  },
+];

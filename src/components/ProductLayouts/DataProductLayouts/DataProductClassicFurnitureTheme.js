@@ -1,0 +1,178 @@
+export const DataProductClassicFurnitureTheme = [
+  {
+    id: 1,
+    name: "Modern Wooden Chair",
+    category: "latest",
+    image: "/ClassicFurniture/chair1.jpeg",
+    price: 120,
+    comparePrice: 150,
+    rating: 4.5,
+    bestseller: true,
+    description: "A sleek modern wooden chair designed to elevate any interior space.\nPerfect for bedrooms, living rooms, or minimalist decor.\nMade from high-quality materials ensuring durability.\nAdds a warm and cozy ambiance to your home.\nEasy to clean and maintain for long-term use.\nComplements a variety of interior styles seamlessly."
+  },
+  {
+    id: 2,
+    name: "Classic Lounge Chair",
+    category: "featured",
+    image: "/ClassicFurniture/chair2.jpeg",
+    price: 80,
+    comparePrice: 100,
+    rating: 3.8,
+    bestseller: false,
+    description: "A stylish lounge chair with a clean and elegant finish.\nAdds charm and comfort to your space.\nCompact size fits perfectly in living areas.\nEnhances the aesthetic appeal of any room.\nLightweight and easy to move around.\nPerfect choice for modern interiors."
+  },
+  {
+    id: 3,
+    name: "Decorative Wall Mirror",
+    category: "topRated",
+    image: "/ClassicFurniture/chair3.jpeg",
+    price: 200,
+    comparePrice: 250,
+    rating: 3.9,
+    bestseller: true,
+    description: "A modern decorative mirror with a premium look.\nReflects light and enhances space in any room.\nDesigned to complement contemporary interiors.\nPerfect for bedrooms, living areas, or hallways.\nDurable frame ensures long-lasting use.\nAdds elegance and brightness to your home decor."
+  },
+  {
+    id: 5,
+    name: "Designer Accent Chair",
+    category: "latest",
+    image: "/ClassicFurniture/chair4.jpeg",
+    price: 900,
+    comparePrice: 350,
+    rating: 4.7,
+    bestseller: false,
+    description: "A designer accent chair crafted with a refined design.\nIdeal for modern living spaces.\nMade with durable, high-quality materials.\nAdds sophistication to your interior.\nPerfect for lounges or bedrooms.\nEasy to clean and maintain."
+  },
+  {
+    id: 6,
+    name: "Minimalist Side Chair",
+    category: "latest",
+    image: "/ClassicFurniture/chair5.jpeg",
+    price: 600,
+    comparePrice: 350,
+    rating: 2.6,
+    bestseller: false,
+    description: "A minimalist side chair for daily use.\nCombines beauty with practical design.\nPerfect for dining or study rooms.\nEnhances the look of your interior.\nLightweight and easy to handle.\nIdeal for personal or office use."
+  },
+  {
+    id: 7,
+    name: "Modern Study Desk",
+    category: "latest",
+    image: "/ClassicFurniture/chair6.jpeg",
+    price: 400,
+    comparePrice: 350,
+    rating: 4.3,
+    bestseller: false,
+    description: "A modern study desk designed for comfort and productivity.\nIdeal for home offices or study spaces.\nSpacious surface accommodates computers and accessories.\nBuilt with sturdy materials for long-lasting use.\nSleek design fits perfectly in any room.\nEasy to assemble and maintain."
+  },
+  {
+    id: 8,
+    name: "Luxury Sofa Set",
+    category: "latest",
+    image: "/ClassicFurniture/sofa1.jpeg",
+    price: 900,
+    comparePrice: 350,
+    rating: 4.1,
+    bestseller: false,
+    description: "A luxury sofa set with a modern finish.\nPerfect for living rooms and lounges.\nEnhances any interior with its elegant design.\nDurable and comfortable for everyday use.\nIdeal for family gatherings.\nBlends seamlessly with various decor themes."
+  },
+  {
+    id: 9,
+    name: "Compact Table Lamp",
+    category: "latest",
+    image: "/ClassicFurniture/sofa2.jpeg",
+    price: 400,
+    comparePrice: 350,
+    rating: 3.7,
+    bestseller: false,
+    description: "A compact table lamp providing soft and warm lighting.\nIdeal for relaxing environments.\nModern design fits perfectly anywhere.\nEnergy-efficient LED illumination.\nSafe and eco-friendly materials.\nAdds a stylish touch to your room."
+  },
+  {
+    id: 10,
+    name: "Modern Coffee Table",
+    category: "latest",
+    image: "/ClassicFurniture/sofa3.jpeg",
+    price: 700,
+    comparePrice: 350,
+    rating: 3.4,
+    bestseller: false,
+    description: "A contemporary coffee table with a clean design.\nPerfect for living rooms.\nBlends seamlessly with modern interiors.\nCrafted for durability.\nEasy to clean and maintain.\nAdds elegance to your space."
+  },
+  {
+    id: 11,
+    name: "Premium Fabric Sofa",
+    category: "latest",
+    image: "/ClassicFurniture/sofa4.jpeg",
+    price: 800,
+    comparePrice: 350,
+    rating: 4.2,
+    bestseller: false,
+    description: "A premium fabric sofa with a stylish appearance.\nPerfect for everyday comfort.\nMade from high-quality materials.\nAdds elegance to living spaces.\nComfortable seating experience.\nIdeal for modern homes."
+  },
+  {
+    id: 12,
+    name: "Standing Floor Lamp",
+    category: "latest",
+    image: "/ClassicFurniture/sofa5.jpeg",
+    price: 400,
+    comparePrice: 350,
+    rating: 3.7,
+    bestseller: false,
+    description: "A standing floor lamp providing soft ambient lighting.\nIdeal for bedrooms and lounges.\nSlim and modern design.\nEnergy-efficient LED.\nSafe and durable build.\nEnhances room atmosphere."
+  },
+  {
+    id: 13,
+    name: "Wooden Dining Table",
+    category: "latest",
+    image: "/ClassicFurniture/sofa6.jpeg",
+    price: 700,
+    comparePrice: 350,
+    rating: 3.4,
+    bestseller: false,
+    description: "A wooden dining table with a modern finish.\nPerfect for family meals.\nStrong and durable structure.\nEasy to clean.\nBlends with classic and modern decor.\nIdeal for daily use."
+  },
+  {
+    id: 14,
+    name: "Modern Corner Sofa",
+    category: "latest",
+    image: "/ClassicFurniture/sofa7.jpeg",
+    price: 800,
+    comparePrice: 350,
+    rating: 4.2,
+    bestseller: false,
+    description: "A modern corner sofa with premium comfort.\nPerfect for spacious living rooms.\nSoft cushions and sturdy build.\nStylish and elegant design.\nIdeal for family relaxation.\nLong-lasting comfort."
+  },
+  {
+    id: 15,
+    name: "Classic Sofa Chair",
+    category: "latest",
+    image: "/ClassicFurniture/sofa8.jpeg",
+    price: 800,
+    comparePrice: 350,
+    rating: 4.2,
+    bestseller: false,
+    description: "A classic sofa chair with premium finishing.\nPerfect for living rooms.\nComfortable and stylish seating.\nDurable and easy to maintain.\nEnhances interior elegance.\nIdeal for modern homes."
+  },
+  {
+    id: 16,
+    name: "Wooden Dining Table",
+    category: "latest",
+    image: "/ClassicFurniture/table1.jpeg",
+    price: 800,
+    comparePrice: 350,
+    rating: 4.2,
+    bestseller: false,
+    description: "A solid wooden dining table with elegant design.\nPerfect for dining spaces.\nStrong and durable material.\nEasy to maintain.\nAdds warmth to your home.\nIdeal for family use."
+  },
+  {
+    id: 17,
+    name: "Modern Side Table",
+    category: "latest",
+    image: "/ClassicFurniture/table2.jpeg",
+    price: 800,
+    comparePrice: 350,
+    rating: 4.2,
+    bestseller: false,
+    description: "A modern side table with sleek design.\nPerfect for bedrooms or lounges.\nCompact and space-saving.\nDurable construction.\nEasy to move and clean.\nComplements modern interiors."
+  },
+];
