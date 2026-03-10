@@ -13,7 +13,7 @@ import { DataSquareShapeProductCard } from "@/components/VerticalProductCard/Dat
 import { DataVerticalProductsCard3 } from "@/components/VerticalProductCard/DataVerticalProductCard3";
 
 export default {
-  id: "classicFurniture",
+    id: "classic-furniture",
   header: "header_centered_menu",
   footer: "big_footer",
   colors: { bg: "#000", text: "#fff" },

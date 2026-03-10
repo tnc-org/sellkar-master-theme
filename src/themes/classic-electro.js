@@ -19,7 +19,7 @@ import { DataClassicElectroImageGridCard } from "@/components/VerticalProductCar
 import { DataClassicElectroSplitMediaSection } from "@/components/VerticalProductCard/DataVerticalProductCard/DataSplitMediaSection/DataClassicElectroSplitMediaSection";
 
 export default {
-    id: "classicElectro",
+    id: "classic-electro",
     header: "header_centered_logo",
     footer: "blackFooter",
     colors: { bg: "#000", text: "#fff" },

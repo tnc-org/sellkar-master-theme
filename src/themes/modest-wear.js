@@ -17,7 +17,7 @@ import { DataProductTabs } from "@/components/ProductLayouts/DataProductLayouts/
 import { DataModestWearImageGridCard2 } from "@/components/VerticalProductCard/DataVerticalProductCard/DataImageGridCard/DataModestWearImageGridCard2";
 
 export default {
-    id: "modestWear",
+    id: "modest-wear",
     header: "header_transparent_black",
     footer: "blackFooter",
     colors: { bg: "#000", text: "#fff" },

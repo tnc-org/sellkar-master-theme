@@ -10,7 +10,7 @@ import { DataElectroMartOneItemCard } from "@/components/VerticalProductCard/Dat
 import { DataElectroMartSmallShopCard } from "@/components/VerticalProductCard/DataVerticalProductCard/DataSmallShopCard/DataElectroMartSmallShopCard";
 
 export default {
-    id: "electroMart",
+    id: "electro-mart",
     header: "header_centered_menu",
     footer: "blackFooter",
     colors: { bg: "#000", text: "#fff" },

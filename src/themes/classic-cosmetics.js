@@ -10,7 +10,7 @@ import { DataProductTabs } from "@/components/ProductLayouts/DataProductLayouts/
 import { DataClassicCosmeticsImageGridCard } from "@/components/VerticalProductCard/DataVerticalProductCard/DataImageGridCard/DataClassicCosmeticsImageGridCard";
 
 export default {
-    id: "classicCosmetics",
+    id: "classic-cosmetics",
     header: "header_drawer",
     footer: "blackFooter",
     colors: { bg: "#000", text: "#fff" },

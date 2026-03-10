@@ -13,7 +13,7 @@ import { DataModernFashionImageGridCard } from "@/components/VerticalProductCard
 import DataModernFashionLatestProductCarousel from "@/components/VerticalProductCard/DataVerticalProductCard/DataLatestProductCarousel/DataModernFashionLatestProductCarousel";
 
 export default {
-    id: "modernFashion",
+    id: "modern-fashion",
     header: "header_centered_menu",
     footer: "blackFooter",
     colors: { bg: "#000", text: "#fff" },

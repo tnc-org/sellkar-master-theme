@@ -19,7 +19,7 @@ import { DataElectroHubOneItemCard } from "@/components/VerticalProductCard/Data
 import { DataElectroHubSquareShapeProductCard } from "@/components/VerticalProductCard/DataVerticalProductCard/DataSquareShapeProductCard/DataElectroHubSquareShapeProductCard";
 
 export default {
-    id: "electroHub",
+    id: "electro-hub",
     header: "header_centered_logo",
     footer: "blackFooter",
     colors: { bg: "#000", text: "#fff" },

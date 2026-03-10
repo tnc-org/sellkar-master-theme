@@ -18,7 +18,7 @@ import { DataToysBannerWithImagesTitleAndDescription } from "@/components/Vertic
 import { padding } from "@mui/system";
 
 export default {
-    id: "bookStore",
+    id: "book-store",
     header: "header_centered_logo",
     footer: "big_footer",
     colors: { bg: "#000", text: "#fff" },
