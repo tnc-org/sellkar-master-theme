@@ -43,8 +43,8 @@ export default async function RootLayout({ children }) {
   const domain = `${protocol}://${host}`;
 
   const res = await fetch(
-    "https://master-api.sellkar.pk/api/v1/store?domain=https://test.sellkar.pk",
-    // `https://master-api.sellkar.pk/api/v1/store?domain=${domain}`,
+    // "https://master-api.sellkar.pk/api/v1/store?domain=https://test.sellkar.pk",
+    `https://master-api.sellkar.pk/api/v1/store?domain=${domain}`,
   );
   const store = await res.json();
   const backendTheme = store?.data?.themeId?.handle;
