@@ -14,7 +14,7 @@ export const DataToysProductWithTitleAndSubtitle = {
     },
 },
     {
-      id: 1,
+      id: 2,
       title: "Bud Vase Set",
       image: "/ThemeToys/grid2.png",
       href:"/shop",
@@ -26,7 +26,7 @@ export const DataToysProductWithTitleAndSubtitle = {
     },
 },
     {
-      id: 1,
+      id: 3,
       title: "Bud Vase Set",
      image: "/ThemeToys/grid3.png",
       href:"/shop",

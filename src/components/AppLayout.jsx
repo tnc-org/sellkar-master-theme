@@ -8,10 +8,10 @@ export default function AppLayout({ children, backendTheme }) {
   const searchParams = useSearchParams();
   const previewTheme = searchParams.get("previewTheme");
 
-  const themeId = previewTheme || backendTheme;
+  const themeId = backendTheme || previewTheme;
 
   return (
-    <ThemeProvider themeId={themeId} previewTheme={previewTheme}>
+    <ThemeProvider themeId={themeId} previewTheme={backendTheme || previewTheme}>
       <InnerLayout>{children}</InnerLayout>
     </ThemeProvider>
   );
