@@ -48,6 +48,7 @@ export default async function RootLayout({ children }) {
   );
   const store = await res.json();
   const backendTheme = store?.data?.themeId?.handle;
+  const storeId = store?.data?._id;
 
   // http://localhost:3000/?previewTheme=beauty
   // const defaultTheme = "time";
@@ -56,7 +57,7 @@ export default async function RootLayout({ children }) {
     <html>
       <body>
         <Suspense fallback={null}>
-          <ClientWrapper>
+          <ClientWrapper storeId={storeId}>
             <AppLayout backendTheme={backendTheme}>{children}</AppLayout>
           </ClientWrapper>
         </Suspense>
