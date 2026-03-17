@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { AuthLayout } from '@/components/auth/auth-layout';
 import { PasswordInput } from '@/components/auth/password-input';
-import { SocialButtons } from '@/components/auth/social-buttons';
 import { signup, verifyEmailOtp } from '@/lib/api/auth';
 import { useRouter } from 'next/navigation';
+import SocialButtons from '@/components/auth/social-buttons';
 
 export default function SignUpPage() {
   const [firstName, setFirstName] = useState('');

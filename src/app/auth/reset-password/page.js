@@ -43,7 +43,7 @@ export default function ResetPasswordPage() {
 
     setIsLoading(true);
     try{
-      const token = getToken("token");
+      const token = localStorage.getItem("resetToken");
       const res =  await resetPassword({token, password});
       console.log("response form reset password page: ", res.data);
       router.push("/auth/signin");

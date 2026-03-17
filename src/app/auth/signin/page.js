@@ -4,10 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { AuthLayout } from '@/components/auth/auth-layout';
 import { PasswordInput } from '@/components/auth/password-input';
-import { SocialButtons } from '@/components/auth/social-buttons';
+
 import { emailLogin } from '@/lib/api/auth';
 import { useRouter } from 'next/navigation';
 import { saveToken } from '@/lib/utils/storage';
+import SocialButtons from '@/components/auth/social-buttons';
 
 export default function SignInPage() {
   const [email, setEmail] = useState('');

@@ -25,7 +25,8 @@ export default function NavbarWrapper2() {
     } finally {
       clearStorage();
       setIsLoggedIn(false);
-      router.push("/auth/signin");
+      window.location.href = "/auth/signin"
+      
     }
   };
 

@@ -6,8 +6,8 @@ import { useRouter } from 'next/navigation';
 import { AuthLayout } from '@/components/auth/auth-layout';
 import { OTPInput } from '@/components/auth/otp-input';
 import BorderButton from '@/components/auth/BorderButton';
-import { forgotPasswordVerifyOtp } from '@/lib/api/auth';
-import { saveToken } from '@/lib/utils/storage';
+import { forgotPasswordEmail, forgotPasswordVerifyOtp } from '@/lib/api/auth';
+
 
 export default function ForgotPasswordOTPPage() {
   const router = useRouter();
@@ -53,7 +53,7 @@ export default function ForgotPasswordOTPPage() {
       console.log("forgot password otp page response: ", res.data);
       const token = res?.data?.data;
       console.log(token);
-      saveToken(token);
+      localStorage.setItem("resetToken", token);
       router.push('/auth/reset-password');
     } catch (error) {
         console.log("Full error:", error?.response?.data); // ← add this
@@ -65,12 +65,19 @@ export default function ForgotPasswordOTPPage() {
   };
 
   const handleResend = async () => {
-    setCanResend(false);
-    setResendCountdown(60);
+  setCanResend(false);
+  setResendCountdown(60);
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
-  };
+  try {
+    const email = localStorage.getItem("forgotPasswordEmail");
+     const res = await forgotPasswordEmail({ email });
 
+     console.log("OTP resent!");
+      console.log("resended otp: ", res.data);
+  } catch (error) {
+    console.log("Resend error:", error?.response?.data);
+  }
+};
   return (
     <AuthLayout title="Verify Code">
       <form onSubmit={handleSubmit} className="space-y-6">
