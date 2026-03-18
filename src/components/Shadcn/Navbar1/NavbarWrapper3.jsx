@@ -36,7 +36,7 @@ export default function NavbarWrapper3() {
     <div
       className={`
         z-50
-        transition-all duration-[1200ms] 
+        transition-all duration-1200ms 
         ease-[cubic-bezier(0.33,1,0.68,1)]
 
         ${mode === "top" ? "relative translate-y-0 opacity-100" : ""}
