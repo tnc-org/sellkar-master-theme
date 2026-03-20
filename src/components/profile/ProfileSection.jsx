@@ -1,21 +1,12 @@
-// components/profile/ProfileSection.jsx
 'use client';
 
 import EditButton from './EditButton';
 import ActionButtons from './ActionButtons';
 
 /**
- * Reusable white card section with title and edit/save/cancel controls.
- *
- * Props:
- *  title        – section heading (string)
- *  isEditing    – bool: show Cancel+Save instead of Edit
- *  onEdit       – called when Edit is clicked
- *  onCancel     – called when Cancel is clicked
- *  onSave       – called when Save is clicked
- *  isSaving     – bool: passed to ActionButtons loading state
- *  editVariant  – 'accent' | 'default' – colour of the Edit button
- *  children     – content of the section
+ * ProfileSection — white card with title + edit controls.
+ * Edit button: top-right of header.
+ * Save/Cancel: bottom of card (after children).
  */
 export default function ProfileSection({
   title,
@@ -29,23 +20,21 @@ export default function ProfileSection({
 }) {
   return (
     <div className="bg-white rounded-xl shadow-sm p-6">
-      {/* Header row */}
+      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-base font-semibold text-gray-800">{title}</h2>
-
-        {isEditing ? (
-          <ActionButtons
-            onCancel={onCancel}
-            onSave={onSave}
-            isLoading={isSaving}
-          />
-        ) : (
-          <EditButton onClick={onEdit} variant={editVariant} />
-        )}
+        {!isEditing && <EditButton onClick={onEdit} variant={editVariant} />}
       </div>
 
-      {/* Section content */}
+      {/* Content */}
       {children}
+
+      {/* Save / Cancel — bottom of card, only when editing */}
+      {isEditing && (
+        <div className="flex justify-end gap-2 mt-6 pt-4 border-t border-gray-100">
+          <ActionButtons onCancel={onCancel} onSave={onSave} isLoading={isSaving} />
+        </div>
+      )}
     </div>
   );
 }

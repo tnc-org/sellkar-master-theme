@@ -1,20 +1,11 @@
-// components/profile/EditButton.jsx
 'use client';
 
-// Matches pic 2 – outlined button with a pencil icon
-// variant: 'accent' (orange) | 'default' (gray)
 export default function EditButton({ onClick, variant = 'default' }) {
-  const styles =
-    variant === 'accent'
-      ? 'border-gray-300 text-gray-600 hover:bg-gray-50'
-      : 'border-gray-300 text-gray-600 hover:bg-gray-50';
-
   return (
     <button
       onClick={onClick}
-      className={`flex items-center cursor-pointer gap-1.5 px-3 py-1.5 rounded-lg border text-sm font-medium transition-colors ${styles}`}
+      className="flex items-center cursor-pointer gap-1.5 px-3 py-1.5 rounded-lg border border-gray-300 text-gray-600 text-sm font-medium hover:bg-gray-50 transition-colors"
     >
-      {/* Pencil icon (inline SVG – no extra library needed) */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-3.5 h-3.5"

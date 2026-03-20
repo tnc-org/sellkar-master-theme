@@ -23,7 +23,7 @@ import { useRouter } from "next/navigation";
 const Navbar2 = ({
   isLoggedIn = false,
   onLogout,
-  userMenu = null,   // ← pass <UserMenu /> from wrapper when logged in
+  userMenu = null,
   logo = {
     url: "",
     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
@@ -76,7 +76,7 @@ const Navbar2 = ({
 
           {/* Logo */}
           <div className="flex items-center">
-            <a href={logo.url} className="flex items-center gap-2">
+            <a href={logo.url} className="flex items-center gap-2 cursor-pointer">
               <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />
               <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
             </a>
@@ -89,7 +89,10 @@ const Navbar2 = ({
               {/* Wishlist */}
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <button onClick={() => router.push("/wishlist")} className="cursor-pointer relative">
+                  <button
+                    onClick={() => router.push("/wishlist")}
+                    className="cursor-pointer relative"
+                  >
                     <HeartIcon className="w-6 h-6" />
                     {wishlistCount > 0 && (
                       <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
@@ -103,31 +106,17 @@ const Navbar2 = ({
 
               {/* Cart */}
               <Tooltip>
-                <TooltipTrigger asChild><div><CartDrawer /></div></TooltipTrigger>
+                <TooltipTrigger asChild><div className="cursor-pointer"><CartDrawer /></div></TooltipTrigger>
                 <TooltipContent><p>Cart</p></TooltipContent>
               </Tooltip>
 
-              {/*
-                If logged in → show UserMenu (avatar + dropdown)
-                If not       → show plain UserIcon + Sign Up button
-              */}
+              {/* User */}
               {isLoggedIn ? (
                 userMenu
               ) : (
-                <>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button onClick={() => router.push("/auth/login")} className="cursor-pointer">
-                        <UserIcon className="w-6 h-6" />
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent><p>Login</p></TooltipContent>
-                  </Tooltip>
-
-                  <Button asChild size="sm">
-                    <a href={auth.signup.url}>{auth.signup.title}</a>
-                  </Button>
-                </>
+                <Button asChild size="sm" className="cursor-pointer">
+                  <a href={auth.login.url}>{auth.login.title}</a>
+                </Button>
               )}
 
             </div>
@@ -137,19 +126,19 @@ const Navbar2 = ({
         {/* ── Mobile ─────────────────────────────────────────────────────── */}
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
-            <a href={logo.url} className="flex items-center gap-2">
+            <a href={logo.url} className="flex items-center gap-2 cursor-pointer">
               <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />
             </a>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="cursor-pointer">
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
+                    <a href={logo.url} className="flex items-center gap-2 cursor-pointer">
                       <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />
                     </a>
                   </SheetTitle>
@@ -162,23 +151,21 @@ const Navbar2 = ({
                   <div className="flex flex-col gap-3">
                     {isLoggedIn ? (
                       <>
-                        {/* Mobile: show UserMenu at top + logout below */}
                         <div className="flex items-center gap-3 pb-2 border-b border-gray-100">
                           {userMenu}
                         </div>
-                        <Button variant="outline" onClick={onLogout} className="text-red-500 border-red-200 hover:bg-red-50">
+                        <Button
+                          variant="outline"
+                          onClick={onLogout}
+                          className="text-red-500 border-red-200 hover:bg-red-50 cursor-pointer"
+                        >
                           Logout
                         </Button>
                       </>
                     ) : (
-                      <>
-                        <Button asChild variant="outline">
-                          <a href={auth.login.url}>{auth.login.title}</a>
-                        </Button>
-                        <Button asChild>
-                          <a href={auth.signup.url}>{auth.signup.title}</a>
-                        </Button>
-                      </>
+                      <Button asChild className="cursor-pointer">
+                        <a href={auth.login.url}>{auth.login.title}</a>
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -196,7 +183,7 @@ const renderMenuItem = (item) => {
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title}>
-        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="cursor-pointer">{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent className="bg-popover text-popover-foreground">
           {item.items.map((subItem) => (
             <NavigationMenuLink asChild key={subItem.title} className="w-80">
@@ -211,7 +198,7 @@ const renderMenuItem = (item) => {
     <NavigationMenuItem key={item.title}>
       <NavigationMenuLink
         href={item.url}
-        className="bg-background hover:bg-muted hover:text-accent-foreground group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors"
+        className="bg-background hover:bg-muted hover:text-accent-foreground group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors cursor-pointer"
       >
         {item.title}
       </NavigationMenuLink>
@@ -223,7 +210,7 @@ const renderMobileMenuItem = (item) => {
   if (item.items) {
     return (
       <AccordionItem key={item.title} value={item.title} className="border-b-0">
-        <AccordionTrigger className="text-md py-0 font-semibold hover:no-underline">
+        <AccordionTrigger className="text-md py-0 font-semibold hover:no-underline cursor-pointer">
           {item.title}
         </AccordionTrigger>
         <AccordionContent className="mt-2">
@@ -235,7 +222,7 @@ const renderMobileMenuItem = (item) => {
     );
   }
   return (
-    <a key={item.title} href={item.url} className="text-md font-semibold">
+    <a key={item.title} href={item.url} className="text-md font-semibold cursor-pointer">
       {item.title}
     </a>
   );
@@ -243,7 +230,7 @@ const renderMobileMenuItem = (item) => {
 
 const SubMenuLink = ({ item }) => (
   <a
-    className="hover:bg-muted hover:text-accent-foreground flex min-w-80 select-none flex-row gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors"
+    className="hover:bg-muted hover:text-accent-foreground flex min-w-80 select-none flex-row gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors cursor-pointer"
     href={item.url}
   >
     <div className="text-foreground">{item.icon}</div>
@@ -257,3 +244,11 @@ const SubMenuLink = ({ item }) => (
 );
 
 export { Navbar2 };
+
+
+
+
+
+
+
+

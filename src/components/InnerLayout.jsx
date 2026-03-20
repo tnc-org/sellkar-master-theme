@@ -3,18 +3,24 @@
 import { useTheme } from "@/provider/theme-provider";
 import { HeaderMap } from "./Headers";
 import { FooterMap } from "./Footers";
+import { usePathname } from "next/navigation";
 
 export default function InnerLayout({ children }) {
-  const {theme, themeId} = useTheme(); // ✅ SAFE
-const DEFAULT_HEADER = "header_drawer"
+  const { theme } = useTheme();
+  const pathname  = usePathname();
+
+
+  const isAuthPage = pathname?.startsWith('/auth');
+
+  const DEFAULT_HEADER = "header_drawer";
   const Header = HeaderMap[theme.header] || HeaderMap[DEFAULT_HEADER];
-    const Footer = FooterMap[theme.footer];
+  const Footer = FooterMap[theme.footer];
 
   return (
     <>
-      {Header && <Header />}
+      {!isAuthPage && Header && <Header />}
       <main>{children}</main>
-      {Footer && <Footer />}
+      {!isAuthPage && Footer && <Footer />}
     </>
   );
 }

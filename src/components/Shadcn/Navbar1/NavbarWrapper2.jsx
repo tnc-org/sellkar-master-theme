@@ -1,18 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Navbar2 } from "./navbar2";
+
 import { getToken, clearStorage } from "@/lib/utils/storage";
 import { logout } from "@/lib/api/auth";
 import { getProfile } from "@/lib/api/profile";
 import { useRouter } from "next/navigation";
 import UserMenu from "./UserMenu";
-
+import { Navbar2 } from "./navbar2";
 
 export default function NavbarWrapper2() {
-  const [mode, setMode] = useState("top");
+  const [mode, setMode]         = useState("top");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isReady, setIsReady] = useState(false);
-  const [user, setUser] = useState({});   // { firstName, lastName, profilePhoto }
+  const [isReady, setIsReady]   = useState(false);
+  const [user, setUser]         = useState({});
   const router = useRouter();
 
   // ── check token + fetch user info ────────────────────────────────────────
@@ -20,7 +20,6 @@ export default function NavbarWrapper2() {
     const token = getToken();
     if (token) {
       setIsLoggedIn(true);
-      // fetch name + avatar for the dropdown
       getProfile()
         .then((res) => {
           const p = res?.data?.data || res?.data;
@@ -30,9 +29,7 @@ export default function NavbarWrapper2() {
             profilePhoto: p.profilePhoto || '',
           });
         })
-        .catch(() => {
-          // profile fetch failed — still show logged-in state, just no name
-        });
+        .catch(() => {});
     }
     setIsReady(true);
   }, []);
@@ -73,25 +70,24 @@ export default function NavbarWrapper2() {
         z-50
         transition-all duration-1200ms
         ease-[cubic-bezier(0.33,1,0.68,1)]
-        ${mode === "top"    ? "relative translate-y-0 opacity-100"  : ""}
-        ${mode === "hiding" ? "-translate-y-full opacity-0"          : ""}
+        ${mode === "top"    ? "relative translate-y-0 opacity-100" : ""}
+        ${mode === "hiding" ? "-translate-y-full opacity-0"         : ""}
         ${mode === "fixed"  ? "fixed top-0 left-0 w-full bg-white shadow-lg translate-y-0 opacity-100" : ""}
       `}
     >
       <Navbar2
         menu={[
-          { title: "HOME",     url: "/"          },
-          { title: "SHOP",     url: "/shop"       },
-          { title: "PRODUCTS", url: "/products"   },
-          { title: "CONTACT",  url: "/contactus"  },
+          { title: "HOME",     url: "/"         },
+          { title: "SHOP",     url: "/shop"      },
+          { title: "PRODUCTS", url: "/products"  },
+          { title: "CONTACT",  url: "/contactus" },
         ]}
         isLoggedIn={isLoggedIn}
         onLogout={handleLogout}
         auth={{
-          login:  { title: "Login",   url: "/auth/login"  },
-          signup: { title: "Sign Up", url: "/auth/signup" },
+          login:  { title: "Login",   url: "/auth/signin" },
+          signup: { title: "Sign In", url: "/auth/signin" }, // ← signup ki jagah signin
         }}
-        // pass the UserMenu component so navbar can render it
         userMenu={
           isLoggedIn
             ? <UserMenu user={user} onLogout={handleLogout} />

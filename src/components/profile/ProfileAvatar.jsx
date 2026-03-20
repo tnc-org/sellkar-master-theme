@@ -1,4 +1,3 @@
-// components/profile/ProfileAvatar.jsx
 'use client';
 
 import { useRef } from 'react';

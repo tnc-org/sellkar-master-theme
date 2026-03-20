@@ -1,67 +1,54 @@
-import { useEffect, useState } from 'react';
+'use client';
 
-export default function Toast({ message, isVisible, duration = 3500 }) {
-  const [progress, setProgress] = useState(100);
+import { useEffect } from 'react';
 
+/**
+ * Toast — top-right fixed notification.
+ *
+ * Props:
+ *  message   – text to show
+ *  type      – 'success' | 'error'
+ *  onClose   – called after duration or on dismiss
+ *  duration  – ms before auto-close (default 3000)
+ */
+export default function Toast({ message, type = 'success', onClose, duration = 3000 }) {
   useEffect(() => {
-    if (isVisible) {
-      setProgress(100);
-      const startTime = Date.now();
-      
-      const interval = setInterval(() => {
-        const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, 100 - (elapsed / duration) * 100);
-        setProgress(remaining);
-        
-        if (remaining === 0) {
-          clearInterval(interval);
-        }
-      }, 10);
+    if (!message) return;
+    const t = setTimeout(onClose, duration);
+    return () => clearTimeout(t);
+  }, [message, duration, onClose]);
 
-      return () => clearInterval(interval);
-    }
-  }, [isVisible, duration]);
+  if (!message) return null;
 
-  if (!isVisible) return null;
+  const colors =
+    type === 'success'
+      ? 'bg-green-50 border-green-400 text-green-700'
+      : 'bg-red-50 border-red-400 text-red-700';
+
+  const icon =
+    type === 'success' ? (
+      <svg className="w-5 h-5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    ) : (
+      <svg className="w-5 h-5 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    );
 
   return (
-    <div className="fixed top-6 right-6 z-50 animate-slideDown">
-      <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg overflow-hidden min-w-[300px] max-w-[400px]">
-        {/* Content */}
-        <div className="px-5 py-4">
-          <div className="flex items-start gap-3">
-            {/* Check icon */}
-            <div className="flex-shrink-0 w-6 h-6 bg-black rounded-full flex items-center justify-center mt-0.5">
-              <svg
-                className="w-4 h-4 text-white"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            
-            {/* Message */}
-            <p className="text-black font-medium text-sm leading-relaxed flex-1">
-              {message}
-            </p>
-          </div>
-        </div>
-
-        {/* Progress bar */}
-        <div className="h-1 bg-gray-200 relative overflow-hidden">
-          <div
-            className="h-full bg-black transition-all ease-linear"
-            style={{
-              width: `${progress}%`,
-              transitionDuration: '50ms'
-            }}
-          />
-        </div>
+    <div className="fixed top-5 right-5 z-50">
+      <div className={`flex items-center gap-3 px-5 py-3 rounded-xl border shadow-lg ${colors}`}>
+        {icon}
+        <span className="text-sm font-medium">{message}</span>
+        <button
+          onClick={onClose}
+          className="ml-2 opacity-60 hover:opacity-100 cursor-pointer"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
     </div>
   );
