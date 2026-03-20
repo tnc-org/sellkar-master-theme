@@ -1,0 +1,40 @@
+export const errorMessages = {
+  firstNameInvalid: "First name must be 2 to 15 characters long",
+  lastNameInvalid: "Last name must be 2 to 15 characters long",
+  emailInvalid: "Please enter a valid email address",
+  passwordInvalid:
+    "Password must be 8 to 24 characters long, contain at least one letter and one number",
+  confirmPasswordInvalid: "Passwords do not match",
+
+  firstNameRequired: "firstname is required",
+  storeNameRequired: "storename is required",
+  lastNameRequired: "lastname is required",
+  profileImageRequired: "profile image is required",
+  phoneNumberRequired: "phone number is required",
+  emailRequired: "email is required",
+  roleRequired: "role is required",
+  passwordRequired: "password is required",
+  domainRequired: "domain is required",
+  noFileProvided: "file not provided",
+  idIsMissing: "id is required",
+  addressRequired: "address is required",
+  userStatusRequired: "user status is required",
+  passwordNotSet: "password has'nt set for this account",
+  emailNotVerified: "email not verified",
+
+  // firstNameInvalid:
+  //   "firstname pattern is invalid, must be less than 15 characters",
+  storeNameInvalid: "storename is invalid, must be less than 15 characters",
+  // lastNameInvalid:
+  //   "lastname pattern is invalid, must be less than 15 characters",
+  phoneNumberInvalid: "phone number is invalid",
+  invalidOtp: "otp is invalid",
+  invalidRole: "role is invalid",
+  emailInvalid: "email is invalid",
+  passwordInvalid: "password must be alphanumeric and 8 to 24 characters long",
+  domainInvalid: "domain is invalid",
+  largeImage: "image too large please select under 2mb",
+  onlyImagesAllowed: "only images are allowed",
+  invalidId: "id is invalid",
+  addressInvalid: "invalid address, must less than 1000 characters",
+};
