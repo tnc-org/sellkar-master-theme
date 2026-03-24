@@ -6,16 +6,16 @@ import { AuthLayout } from '@/components/auth/auth-layout';
 import { OTPInput } from '@/components/auth/otp-input';
 import BorderButton from '@/components/auth/BorderButton';
 import { verifyEmailComplete, verifyEmailOtp } from '@/lib/api/auth';
-import Spinner from '@/components/ui/Spinner';
+import LoadingOverlay from '@/components/ui/LoadingOverlay';
 
 export default function VerifyEmailPage() {
   const router = useRouter();
-  const [otp, setOtp]                     = useState('');
-  const [errors, setErrors]               = useState({});
-  const [isLoading, setIsLoading]         = useState(false);
-  const [isResending, setIsResending]     = useState(false);
-  const [canResend, setCanResend]         = useState(true);
-  const [resendCountdown, setResend]      = useState(0);
+  const [otp, setOtp]                 = useState('');
+  const [errors, setErrors]           = useState({});
+  const [isLoading, setIsLoading]     = useState(false);
+  const [isResending, setIsResending] = useState(false);
+  const [canResend, setCanResend]     = useState(true);
+  const [resendCountdown, setResend]  = useState(0);
 
   useEffect(() => {
     if (resendCountdown > 0) {
@@ -28,10 +28,7 @@ export default function VerifyEmailPage() {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    if (!otp || otp.length !== 6) {
-      setErrors({ otp: 'Please enter a valid 6-digit code' });
-      return;
-    }
+    if (!otp || otp.length !== 6) { setErrors({ otp: 'Please enter a valid 6-digit code' }); return; }
     setErrors({});
     setIsLoading(true);
     try {
@@ -51,8 +48,7 @@ export default function VerifyEmailPage() {
     setIsResending(true);
     try {
       const email = localStorage.getItem('verifyEmail');
-      const res = await verifyEmailOtp({ email });
-      console.log('📧 Resent Email OTP:', res?.data?.data);
+      await verifyEmailOtp({ email });
     } catch (err) {
       console.log('Resend error:', err?.response?.data);
     } finally {
@@ -62,6 +58,7 @@ export default function VerifyEmailPage() {
 
   return (
     <AuthLayout title="Verify Email">
+      {(isLoading || isResending) && <LoadingOverlay />}
       <form onSubmit={handleSubmit} className="space-y-4">
         <p className="text-sm text-gray-600 text-center">
           We sent a 6-digit verification code to your email. Please enter it below.
@@ -73,20 +70,16 @@ export default function VerifyEmailPage() {
           {!canResend && resendCountdown > 0 ? (
             <p>Resend code in {resendCountdown}s</p>
           ) : (
-            <button
-              type="button" onClick={handleResend} disabled={!canResend || isResending}
-              className="text-blue-600 hover:underline font-medium disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-1 mx-auto"
-            >
-              {isResending && <Spinner size="sm" />} Resend Code
+            <button type="button" onClick={handleResend} disabled={!canResend || isResending}
+              className="text-blue-600 hover:underline font-medium disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer">
+              Resend Code
             </button>
           )}
         </div>
 
-        <button
-          type="submit" disabled={isLoading || otp.length !== 6}
-          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
-        >
-          {isLoading ? <><Spinner size="sm" /> Verifying...</> : 'Verify Email'}
+        <button type="submit" disabled={isLoading || otp.length !== 6}
+          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer">
+          Verify Email
         </button>
 
         <BorderButton href="/auth/signin" label="Back to login" />

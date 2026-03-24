@@ -7,12 +7,10 @@ import { PasswordInput } from '@/components/auth/password-input';
 import { emailLogin } from '@/lib/api/auth';
 import { useRouter } from 'next/navigation';
 import { saveToken } from '@/lib/utils/storage';
-
-import Spinner from '@/components/ui/Spinner';
-import { emailPattern, passwordPattern } from '@/lib/utils/core';
+import LoadingOverlay from '@/components/ui/LoadingOverlay';
+import { emailPattern } from '@/lib/utils/core';
 import { errorMessages } from '@/lib/utils/errorMessages';
 import SocialButtons from '@/components/auth/social-buttons';
-
 
 export default function SignInPage() {
   const [email, setEmail]           = useState('');
@@ -40,6 +38,7 @@ export default function SignInPage() {
     try {
       const res = await emailLogin({ email, password });
       saveToken(res?.data?.token);
+      document.cookie = `token=${res?.data?.token}; path=/`;
       window.location.href = '/';
     } catch (err) {
       setApiError(err?.response?.data?.message || 'Login failed. Please try again.');
@@ -50,30 +49,30 @@ export default function SignInPage() {
 
   return (
     <AuthLayout title="Sign in">
+      {isLoading && <LoadingOverlay />}
       <form onSubmit={handleSubmit} className="space-y-4">
 
         {apiError && (
           <p className="text-xs text-red-500 text-center bg-red-50 rounded-lg py-2 px-3">{apiError}</p>
         )}
 
-        {/* Email */}
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700">Email</label>
           <input
             type="email" placeholder="Enter your email" value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: undefined })); }}
             className="w-full h-11 px-4 rounded-lg border-2 border-gray-300 text-gray-700 placeholder-gray-400 outline-none transition-colors focus:border-blue-600"
           />
           {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
         </div>
 
-        {/* Password */}
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700">Password</label>
-          <PasswordInput placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} error={errors.password} />
+          <PasswordInput placeholder="Enter your password" value={password}
+            onChange={(e) => { setPassword(e.target.value); setErrors((p) => ({ ...p, password: undefined })); }}
+            error={errors.password} />
         </div>
 
-        {/* Remember + Forgot */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <input id="remember" type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)}
@@ -83,15 +82,13 @@ export default function SignInPage() {
           <Link href="/auth/forgot-password" className="text-sm text-blue-600 hover:underline font-medium cursor-pointer">Forgot password?</Link>
         </div>
 
-        {/* Submit */}
         <button
           type="submit" disabled={isLoading}
-          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
+          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         >
-          {isLoading ? <><Spinner size="sm" /> Logging in...</> : 'Login'}
+          Login
         </button>
 
-        {/* Divider */}
         <div className="relative my-2">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-300" /></div>
           <div className="relative flex justify-center text-sm"><span className="px-2 bg-white text-gray-500">Or continue with</span></div>

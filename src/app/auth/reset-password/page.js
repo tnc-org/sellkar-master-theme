@@ -6,7 +6,7 @@ import { AuthLayout } from '@/components/auth/auth-layout';
 import { PasswordInput } from '@/components/auth/password-input';
 import BorderButton from '@/components/auth/BorderButton';
 import { resetPassword } from '@/lib/api/auth';
-import Spinner from '@/components/ui/Spinner';
+import LoadingOverlay from '@/components/ui/LoadingOverlay';
 import { passwordPattern } from '@/lib/utils/core';
 import { errorMessages } from '@/lib/utils/errorMessages';
 
@@ -36,6 +36,7 @@ export default function ResetPasswordPage() {
     try {
       const token = localStorage.getItem('resetToken');
       await resetPassword({ token, password });
+      localStorage.removeItem('resetToken');
       router.push('/auth/signin');
     } catch (err) {
       setApiError(err?.response?.data?.message || 'Reset failed. Please try again.');
@@ -46,6 +47,7 @@ export default function ResetPasswordPage() {
 
   return (
     <AuthLayout title="Reset Password">
+      {isLoading && <LoadingOverlay />}
       <form onSubmit={handleSubmit} className="space-y-4">
         <p className="text-sm text-gray-600">Enter your new password below.</p>
 
@@ -55,19 +57,21 @@ export default function ResetPasswordPage() {
 
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700">New Password</label>
-          <PasswordInput placeholder="Create a strong password" value={password} onChange={(e) => setPassword(e.target.value)} error={errors.password} />
+          <PasswordInput placeholder="Create a strong password" value={password}
+            onChange={(e) => { setPassword(e.target.value); setErrors((p) => ({ ...p, password: undefined })); }}
+            error={errors.password} />
         </div>
 
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700">Confirm Password</label>
-          <PasswordInput placeholder="Confirm your password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} error={errors.confirmPassword} />
+          <PasswordInput placeholder="Confirm your password" value={confirmPassword}
+            onChange={(e) => { setConfirmPassword(e.target.value); setErrors((p) => ({ ...p, confirmPassword: undefined })); }}
+            error={errors.confirmPassword} />
         </div>
 
-        <button
-          type="submit" disabled={isLoading}
-          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
-        >
-          {isLoading ? <><Spinner size="sm" /> Resetting...</> : 'Reset Password'}
+        <button type="submit" disabled={isLoading}
+          className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer">
+          Reset Password
         </button>
 
         <BorderButton href="/auth/signin" label="Back to login" />
